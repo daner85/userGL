@@ -20,10 +20,10 @@ public class User {
 		      message = "Una mayúscula, letras minúsculas, dos números, largo 8")
 	private final String password;
 	private Token token;
-	private final List<Phones> phones;
+	private List<Phones> phones;
 	
 	@JsonCreator
-	public User(@NotNull(message = "Please provide a author") @JsonProperty("name") final  String name, @JsonProperty("email") final  String email,@JsonProperty("password") final  String password, @JsonProperty("phone") final List<Phones> phones) {
+	public User(@NotNull(message = "Please provide a author") @JsonProperty("name") final  String name, @JsonProperty("email") final  String email,@JsonProperty("password") final  String password, @JsonProperty("phones") final List<Phones> phones) {
 		this.name = name;
 		this.email = email;
 		this.password = password;
@@ -54,6 +54,7 @@ public class User {
 	public List<Phones> getPhones() {
 		return phones;
 	}
+	
 
 	@Override
 	public int hashCode() {
@@ -90,6 +91,12 @@ public class User {
 		} else if (!password.equals(other.password))
 			return false;
 		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", name=" + name + ", email=" + email + ", password=" + password + ", token=" + token
+				+ ", phones=" + phones + "]";
 	}
 
 	

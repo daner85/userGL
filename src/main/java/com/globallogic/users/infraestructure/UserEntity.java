@@ -46,7 +46,7 @@ public class UserEntity {
 
 	public UserEntity(User user) {
 		this.id = UUID.randomUUID();
-		logger.debug("ID User generado: "+ this.id.toString());
+		logger.info("ID User generado: "+ this.id.toString());
 		this.name = user.getName();
 		this.email = user.getEmail();
 		this.password = user.getPassword();
@@ -61,7 +61,10 @@ public class UserEntity {
 	
 	private List<PhoneEntity> transformPhones(User user) {
 		List<PhoneEntity> phoneEntList = new ArrayList<PhoneEntity>();
+		logger.info("llega"+user.toString());
+		logger.info("telefono"+user.getPhones());
 		for(Phones phones : user.getPhones()) {
+			logger.info("llega2:"+phones.getCityCode());
 			phoneEntList.add(new PhoneEntity(phones.getNumber(), phones.getCountryCode(), phones.getCityCode()));
 		}
 		return phoneEntList;

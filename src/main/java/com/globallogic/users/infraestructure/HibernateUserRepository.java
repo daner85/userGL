@@ -20,6 +20,7 @@ public class HibernateUserRepository implements UserRepository{
 	@Override
 	public UserResponse createUser(User user) {
 		logger.info("Se crea entidad User y Phone");
+		logger.info("user1"+user.toString());
 		 UserEntity ue = springDataH2Repository.save(new UserEntity(user));
 		 return new UserResponse(ue.getId(), ue.getCreated(), ue.getModified(), ue.getLastLogin(), ue.getActive(), ue.getToken());
 	}

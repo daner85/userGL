@@ -38,6 +38,7 @@ public class UserController {
 	@PostMapping(produces= MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<UserResponse> createUser(@Valid @RequestBody final User user) throws MailFoundException{
 		logger.info("Usuario"+ user.getName());
+		logger.info("fono:"+user.getPhones());
 		UserResponse userNew;
 		try {
 			userNew = userService.createUser(user);
@@ -46,7 +47,6 @@ public class UserController {
 			Map<String, Object> body = new LinkedHashMap<>();
 			body.put("mensaje", e.getMessage());
 			return new ResponseEntity(body, HttpStatus.FOUND);
-//			throw new MailFoundException();
 		}
 		return new ResponseEntity<>(userNew, HttpStatus.OK);
 	}

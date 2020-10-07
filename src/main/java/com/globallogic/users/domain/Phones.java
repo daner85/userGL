@@ -64,5 +64,12 @@ public class Phones {
 			return false;
 		return true;
 	}
+
+	@Override
+	public String toString() {
+		return "Phones [number=" + number + ", cityCode=" + cityCode + ", countryCode=" + countryCode + "]";
+	}
+	
+	
 	
 }
