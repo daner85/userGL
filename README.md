@@ -8,14 +8,16 @@ Descargar el proyecto
     
     Ejecutar ./gradlew clean build en Linux o gradlew.bat clean build en Windows.
     
-    Ejecutar ./gradlew run en Linux/Mac o gradlew.bat run en Windows para ejecutar el proyecto.
+2.-Ir a la carpeta build/libs y ejecutar:
+
+    java -jar 'nombre.jar'
     
 
-2.-Endpoint para consumir la API
+3.-Endpoint para consumir la API
 
   http://localhost:8080/v1/users/
 
-3.-Ejemplo RQ:
+4.-Ejemplo RQ:
 
   {
     "name": "Juan Rodriguez",
