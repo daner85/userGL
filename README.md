@@ -37,6 +37,6 @@ Descargar el proyecto
       ]
   }
   
- 5.- Se agrega proyecto Insonmia para probar la APP 
-    archivo: 
-    Insomnia_2020-10-07.json
+5.-Se agrega proyecto para importar a Insomnia para realizar pruebas
+
+  Insomnia_2020-10-07.json
